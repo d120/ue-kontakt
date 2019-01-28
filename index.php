@@ -154,6 +154,7 @@ Tim Pollandt
       </form>
     </div>
 
+    <!--
     <div class="jumbotron">
       <h1 class="display-4">Anmeldung zur UE</h1>
       <p class="lead">Hier kannst du dich direkt zur UE anmelden, wir werden dich dann in naher Zukunft kontakieren.</p>
@@ -222,6 +223,7 @@ Tim Pollandt
         </div>
       </form>
     </div>
+    -->
   </div>
 </body>
 </html>
