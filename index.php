@@ -88,6 +88,15 @@ Tim Pollandt
   <title>UE :: Kontakt</title>
 </head>
 <body>
+  <script>
+
+      $(function() {
+        setTimeout(function() {
+          $(".alert").alert('close');
+        }, 2000);
+      });
+
+  </script>
 
   <div class="container" style="margin-top: 5ex;">
 <?php
