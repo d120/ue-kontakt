@@ -1,7 +1,7 @@
 <?php
 
       function perform_send_mail($to, $subject, $body) {
-        $headers = "From: ue-noreply@d120.de";
+        $headers = "From: UE Kontakt <ue-noreply@d120.de>";
         $headers = $headers . "\r\n" . "CC: ue@fachschaft.informatik.tu-darmstadt.de";
         $headers = $headers . "\r\n" . "Content-Type: text/html; charset=utf-8";
         $headers = $headers . "\r\n" . "Reply-To: ue@fachschaft.informatik.tu-darmstadt.de";
