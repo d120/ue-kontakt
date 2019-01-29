@@ -82,6 +82,8 @@ Tim Pollandt
   <meta name="robots" content="noindex, follow">
 
   <link rel="stylesheet" href="bootstrap.min.css">
+  <script src="jquery.min.js">
+  <script src="bootstrap.min.js">
 
   <title>UE :: Kontakt</title>
 </head>
