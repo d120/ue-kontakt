@@ -104,7 +104,7 @@ Tim Pollandt
         if ($success) {
 ?>
     <div class="alert alert-success alert-dismissible fade show" role="alert">
-      <strong>Anmeldung erfolgreich.</strong> Wir haben deine Anmeldung erhalten. Du wirst in Kürze eine E-Mail erhalten.
+      <strong>Anmeldung erfolgreich.</strong> Wir haben deine Anmeldung erhalten. Du wirst in Kürze eine E-Mail erhalten. Bitte überprüfe auch deinen Spam-Ordner.
       <button type="button" class="close" data-dismiss="alert">&times;</button>
     </div>
 <?php
