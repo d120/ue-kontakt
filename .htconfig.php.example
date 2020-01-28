@@ -1,0 +1,12 @@
+<?php
+
+$MAIL_FROM = 'from@example.org';
+$MAIL_CC = 'cc@example.org';
+$MAIL_REPLY_TO = 'replyto@example.org';
+$MAIL_CONFIG = [
+  'host' => "mail.example.org",
+  'auth' => true,
+  'username' => "mymailusername",
+  'password' => "mymailpassword",
+  'port' =>"587"
+];

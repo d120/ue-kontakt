@@ -1,12 +1,29 @@
 <?php
+require_once '.htconfig.php';
+require_once 'System.php';
+require_once 'Mail.php';
 
-      function perform_send_mail($to, $subject, $body) {
-        $headers = "From: UE Kontakt <ue-noreply@d120.de>";
-        $headers = $headers . "\r\n" . "CC: ue@fachschaft.informatik.tu-darmstadt.de";
-        $headers = $headers . "\r\n" . "Content-Type: text/html; charset=utf-8";
-        $headers = $headers . "\r\n" . "Reply-To: ue@fachschaft.informatik.tu-darmstadt.de";
-        return mail($to, $subject, $body, $headers);
-      }
+
+function perform_send_mail($to, $subject, $body) {
+
+  $headers = [
+    'From' => $GLOBALS['MAIL_FROM'],
+    'To' => $to,
+    'Subject' => $subject,
+    'CC' => $GLOBALS['MAIL_CC'],
+    'Content-Type' => 'text/html; charset=utf-8',
+    'Reply-To' => $GLOBALS['MAIL_REPLY_TO']
+  ];
+  $smtp = Mail::factory('smtp', $GLOBALS['MAIL_CONFIG']);
+  $mail = $smtp->send($to, $headers, $body);
+  if (PEAR::isError($mail)) {
+    echo('<p>FEHLER: ' . $mail->getMessage() . '</p>');
+    return false;
+  } else {
+    return true;
+  }
+
+}
 
       function perform_information($email) {
         return perform_send_mail($email, 'TU Darmstadt Informatik: Interesse an der UE', '
@@ -111,7 +128,7 @@ Tim Pollandt
         } else {
 ?>
     <div class="alert alert-danger alert-dismissible fade show" role="alert">
-      <strong>Hoppla, es ist etwas schief gelaufen.</strong> Bitte versuche es später erneut.
+    <strong>Hoppla, es ist etwas schief gelaufen.</strong> Bitte versuche es später erneut.
       <button type="button" class="close" data-dismiss="alert">&times;</button>
     </div>
 <?php
