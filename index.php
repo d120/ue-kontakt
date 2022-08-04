@@ -15,7 +15,7 @@ function perform_send_mail($to, $subject, $body) {
     'Reply-To' => $GLOBALS['MAIL_REPLY_TO']
   ];
   $smtp = Mail::factory('smtp', $GLOBALS['MAIL_CONFIG']);
-  $mail = $smtp->send($to, $headers, $body);
+  $mail = $smtp->send(array($to, $GLOBALS['MAIL_CC']), $headers, $body);
   if (PEAR::isError($mail)) {
     echo('<p>FEHLER: ' . $mail->getMessage() . '</p>');
     return false;
